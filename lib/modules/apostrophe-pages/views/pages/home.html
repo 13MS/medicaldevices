@@ -1,0 +1,116 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="main-content">
+
+  
+  <section id="intro">
+    <div class="wrap">{{ apos.singleton(data.page, 'intro_text', 'apostrophe-rich-text', {
+          toolbar: [ 'Bold' ]
+        }) }}
+    <a class="button">I've been affected by a device</a>    
+    <a class="button">I'm thinking about getting a device</a>    
+    </div>
+  </section>
+
+
+  <section id="months">
+  <div class="wrap">
+    In the first 4 months of 2018, they have likely contributed to the death of <strong>2,368</strong> patients.
+  </div>
+  
+  </section>
+  <section id="definition">
+    <h3>What is a <strong>Medical Device</strong>?</h3>
+    
+
+  </section>
+  <section id="examples">
+    A row of medical Devices
+  </section>
+  <section id="oneinten">
+    <div class="wrap">
+      One in Ten will be implanted with at least one device over their lifetime.
+      The overwhelming majority of high-risk implanted devices <strong>never</strong> require a single clinical trial.
+    </div>
+  </section>
+  <section id="story">
+    <div class="wrap">
+      <div class="quote">{{ apos.singleton(data.page, 'story_quote', 'apostrophe-rich-text', {
+          toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
+        }) }}</div>
+      <div class="bottom">Bottom text</div>
+    </div>
+  
+  </section>
+  <section id="questions">
+    <div class="wrap">
+      <div class="title">
+        <h3>Questions & Answers</h3>
+      </div>
+      <div class="answers">
+      
+      </div>
+    </div>
+  </section>
+  <section id="act">
+    <div class="action">
+      {{ apos.area(data.page, 'action1_text', {
+      widgets: {
+        'apostrophe-rich-text': {
+          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+          styles: [
+            { name: 'Paragraph', element: 'p' }
+          ]
+        }
+      }
+    }) }}
+    </div>
+    <div class="action">
+      {{ apos.area(data.page, 'action2_text', {
+      widgets: {
+        'apostrophe-rich-text': {
+          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+          styles: [
+            { name: 'Paragraph', element: 'p' }
+          ]
+        }
+      }
+    }) }}
+    </div>
+    <div class="action">
+      {{ apos.area(data.page, 'action3_text', {
+      widgets: {
+        'apostrophe-rich-text': {
+          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+          styles: [
+            { name: 'Paragraph', element: 'p' }
+          ]
+        }
+      }
+    }) }}
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+    {{ apos.area(data.page, 'about_text', {
+      widgets: {
+        'apostrophe-rich-text': {
+          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+          styles: [
+            { name: 'Heading', element: 'h3' },
+            { name: 'Paragraph', element: 'p' }
+          ]
+        }
+      }
+    }) }}
+    </div>
+  </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,123 @@
+@black:     #000;
+@white:     #fff;
+@green:     #40D764;
+
+//Mixins
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+@font-face {
+    font-family: 'AvenirNext-Regular';
+    src: url('/modules/medical-theme/fonts/AvenirNext-Regular.eot?#iefix') format('embedded-opentype'),  url('/modules/medical-theme/fonts/AvenirNext-Regular.woff') format('woff'), url('/modules/medical-theme/fonts/AvenirNext-Regular.ttf')  format('truetype'), url('/modules/medical-theme/fonts/AvenirNext-Regular.svg#AvenirNext-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.main-content {
+    font-family: 'AvenirNext-Regular', sans-serif;
+    strong{
+        color: @green;
+    }
+    h2{
+        font-size: 50px;
+    }
+    h3{
+        font-size: 20px;
+        line-height: 1.5em;
+    }
+    a.button{
+        display: inline-block;
+        border: 2px solid @green;
+        padding: 10px 15px;
+        margin: 0 10px;
+    }
+    section{
+        height: 100vh;
+        position: relative;
+        .wrap {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    }
+    #intro{
+        background-color: @black;
+        color: @white;
+        .wrap{
+            .centered();
+            p{
+                font-size: 30px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    #months{
+        background-color: @white;
+        .wrap{
+            .centered();
+            p{
+                font-size: 30px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    #definition{
+        background-color: @black;
+        color: @white;
+    }
+    #examples{
+        background: red;
+        height: auto;
+        padding: 50px 0;
+    }
+    #oneinten{
+        background-color: @white;
+        .wrap{
+            .centered();
+            p{
+                font-size: 30px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    #story{
+        .wrap{
+            .centered();
+            p{
+                font-size: 30px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    #questions{
+        background-color: @white;
+    }
+    #act{
+        height: auto;
+        .clearfix();
+        .action{
+            float: left;
+            width: 33.33%;
+            height: 500px;
+            border: 1px solid @black;
+        }
+    }
+    #about{
+        background-color: @black;
+        color: @white;
+        height: auto;
+        padding: 200px 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,28 @@
+{#
+  This is a default template
+#}
+
+{% extends "layout.html" %}
+
+{% block beforeMain %}
+  <div class="block hero">
+    <div class="inner">
+      <div class="hero-text">
+        <h4>Welcome to my first Apostrophe site!</h4>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block main %}
+  <div class="main-content">
+    <h3>Hello world! Test
+      {% if not data.user %}
+        <a class="login-link" href="/login">Login</a>
+      {% endif %}
+    </h3>
+   {{ apos.singleton(data.page, 'textBlock', 'apostrophe-rich-text', {
+      toolbar: [ 'Bold', 'Italic' ]
+    }) }}
+  </div>
+{% endblock %}
