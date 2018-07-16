@@ -394,6 +394,10 @@ body{
         color: @white;
         padding: 200px 0 300px;
         margin: 0;
+        background-image: url('/images/definition_bg.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 100% 50%;
         .col-6{
             padding: 0 50px;
         }
@@ -409,8 +413,26 @@ body{
         .slickNav{
             text-align: center;
             padding: 20px 0;
+            .next{
+                &:hover{
+                    padding-left: 20px;
+                }
+                img{
+                    transform: rotate(-90deg);
+                }
+            }
+            .prev{
+                &:hover{
+                    padding-right: 20px;
+                }
+                img{
+                    transform: rotate(90deg);
+                }
+            }
             a{
-                cursor: pointer;   
+                margin: 0 10px;
+                cursor: pointer;
+                transition: .3s;
             }
         }
         .device{
