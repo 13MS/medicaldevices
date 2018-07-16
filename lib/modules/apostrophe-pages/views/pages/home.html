@@ -6,7 +6,7 @@
 {% extends "layout.html" %}
 
 {% block main %}
-  <div class="main-content">
+  <div class="main-content home">
 
   
   <section id="intro">
@@ -16,101 +16,141 @@
     <a class="button">I've been affected by a device</a>    
     <a class="button">I'm thinking about getting a device</a>    
     </div>
+    <div class="more">
+      <a href="#months">
+      Learn more
+      <div class="arrow">
+        Arrow
+      </div>
+      </a>
+    </div>
   </section>
 
 
   <section id="months">
   <div class="wrap">
-    In the first 4 months of 2018, they have likely contributed to the death of <strong>2,368</strong> patients.
+    <h2>In the first 4 months of 2018, they have likely contributed to the death of <strong><span class="counter">2,368</span></strong> patients.</h2>
   </div>
-  
+  <div class="animation">
+    <div class="month">January</div>
+    <div class="month">February</div>
+    <div class="month">March</div>
+    <div class="month">April</div>
+    <div class="bar"></div>
+  </div>
   </section>
-  <section id="definition">
-    <h3>What is a <strong>Medical Device</strong>?</h3>
-    
 
+
+  <section id="definition" class="col-group">
+    <div class="col-6">
+      <h2>What is a <strong>Medical Device</strong>?</h2>
+      {{ apos.singleton(data.page, 'definition', 'apostrophe-rich-text', {
+        toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]  
+      })}}  
+  </div>
   </section>
-  <section id="examples">
-    A row of medical Devices
-  </section>
-  <section id="oneinten">
-    <div class="wrap">
-      One in Ten will be implanted with at least one device over their lifetime.
-      The overwhelming majority of high-risk implanted devices <strong>never</strong> require a single clinical trial.
+
+
+  <section id="examples" class="col-group">
+    <div class="deviceGroup">
+      {{ apos.area(data.page, 'devices', {
+        widgets: {
+          'device': {}
+        }
+      }) }}
+    </div>
+    <div class="slickNav">
+    <a class="prev">Prev</a> <a class="next">Next</a>
     </div>
   </section>
+
+
+  <section id="oneinten">
+    <div class="wrap">
+      <div class="partOne">
+        <div class="firstline"><div class="one">One</div> in <div class="ten">Ten</div></div>
+        <div class="secondline">will be implanted with at least one device over their lifetime.</div>
+      </div>
+        <div class="partTwo">The overwhelming majority of high-risk implanted devices <strong>never</strong> require a single clinical trial.</div>
+    </div>
+    <div class="whiteBlur"></div>
+  </section>
+
+
   <section id="story">
     <div class="wrap">
       <div class="quote">{{ apos.singleton(data.page, 'story_quote', 'apostrophe-rich-text', {
           toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
         }) }}</div>
-      <div class="bottom">Bottom text</div>
     </div>
-  
+    <div class="bottom">
+      <a class="launch"><i class="fa fa-align-left"></i></a>
+      <h4>See Angie Firmalino’s Story</h4>
+      <p>President of ASHES Nonprofit, Founder and Head Administrator of Essure Problems</p>
+    </div>
+    <div class="storyPlayer">
+      <div class="player-wrap">
+          <h2>Angie Firmalino</h2>
+          {{ apos.singleton(data.page, 'story', 'apostrophe-rich-text', {
+            toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ],
+            styles: [
+              { name: 'Heading', element: 'h3' },
+              { name: 'Paragraph', element: 'p' }
+            ]
+          }) }}
+          <div class="iframeWrap">
+            <iframe src="https://www.youtube.com/embed/m4krz1cTmmU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+      </div>
+      <div class="close"><i class="fa fa-times"></i></div>
+    </div>
+    <div class="backgroundVideo">
+      <video autoplay muted loop poster="">
+        <source src="videos/test.mp4" type="video/mp4" />
+        <source src="videos/test.ogg" type="video/ogg" />
+        <source src="videos/test.webm" type="video/webm" />
+      </video>
+    </div>
   </section>
   <section id="questions">
-    <div class="wrap">
-      <div class="title">
-        <h3>Questions & Answers</h3>
+    <div class="wrap col-group">
+      <div class="title col-6">
+        <h2>Questions & Answers</h2>
       </div>
-      <div class="answers">
-      
+      <div class="answers col-6">
+      {{ apos.area(data.page, 'qanda', {
+          widgets: {
+            'drawer': {}
+          }
+        }) }}
       </div>
     </div>
   </section>
-  <section id="act">
-    <div class="action">
-      {{ apos.area(data.page, 'action1_text', {
-      widgets: {
-        'apostrophe-rich-text': {
-          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
-          styles: [
-            { name: 'Paragraph', element: 'p' }
-          ]
-        }
-      }
-    }) }}
+  <section id="act" class="col-group">
+    <div class="action col-4">
+      {{ apos.singleton(data.page, 'action1', 'action-box', {}) }}
     </div>
-    <div class="action">
-      {{ apos.area(data.page, 'action2_text', {
-      widgets: {
-        'apostrophe-rich-text': {
-          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
-          styles: [
-            { name: 'Paragraph', element: 'p' }
-          ]
-        }
-      }
-    }) }}
+    <div class="action col-4">
+      {{ apos.singleton(data.page, 'action2', 'action-box', {}) }}
     </div>
-    <div class="action">
-      {{ apos.area(data.page, 'action3_text', {
-      widgets: {
-        'apostrophe-rich-text': {
-          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
-          styles: [
-            { name: 'Paragraph', element: 'p' }
-          ]
-        }
-      }
-    }) }}
+    <div class="action col-4">
+      {{ apos.singleton(data.page, 'action3', 'action-box', {}) }}
     </div>
+    
+    
   </section>
 
   <section id="about">
     <div class="wrap">
-    {{ apos.area(data.page, 'about_text', {
-      widgets: {
-        'apostrophe-rich-text': {
+    {{ apos.singleton(data.page, 'about_text', 'apostrophe-rich-text', {
           toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
           styles: [
             { name: 'Heading', element: 'h3' },
             { name: 'Paragraph', element: 'p' }
           ]
-        }
-      }
-    }) }}
+      }) }}
     </div>
   </section>
+  <div id="progressBar"></div>
   </div>
 {% endblock %}

@@ -1,0 +1,27 @@
+.deviceDrawer{
+    margin-bottom: 20px;
+    background-color: @lightgrey;
+    
+    .title{
+        padding: 20px;
+        cursor: pointer;
+        &:hover{
+            background-color: @lightgrey;
+        }
+        i{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        &.active{
+            background-color: @green;
+        }
+    }
+    .content{
+        padding: 20px;
+        display: none;
+        .text{
+            padding-left: 20px!important;
+        }
+    }
+}

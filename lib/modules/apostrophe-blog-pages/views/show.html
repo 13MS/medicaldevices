@@ -1,0 +1,25 @@
+{#
+  This is a default blog post
+#}
+
+{% extends "layout.html" %}
+
+
+{% block main %}
+  <div class="main-content blogpost">
+
+  <div class="banner" style="background-image:url({{ apos.attachments.url(data.piece.image, { size: 'full'}) }})">
+  </div>
+
+  <section id="pageContent">
+    <div class="wrap">
+        <h3 class="apos-event-title">{{ data.piece.title }}</h3>
+        <h5 class="apos-event-date">{{ data.piece.publishedAt | date('MMMM Do') }} at {{ data.piece.publishedAt | date('h:mma') }}</h5>
+        {{ apos.singleton(data.piece, 'textBlock', 'apostrophe-rich-text', {
+          toolbar: [ 'Bold', 'Italic' ]
+        }) }}
+        <footer><a class="button" href="/news">All Posts</a></footer>
+      </div>
+    </section>
+  </div>
+{% endblock %}

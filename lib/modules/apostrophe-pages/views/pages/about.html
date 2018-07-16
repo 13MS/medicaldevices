@@ -1,0 +1,26 @@
+
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="main-content about {% if data.page.banner %}hasbanner{% endif %}" style="background-color: {{data.page.bgcolor}}">
+
+  {% if data.page.banner %}
+  <div class="banner" style="background-image:url({{apos.attachments.url(data.page.banner, { size: 'full' })}})">
+  </div>
+  {% endif %}
+
+  <section id="pageContent">
+    <div class="wrap">
+        <h1>{{data.page.title}}</h1>
+        {{ apos.area(data.page, 'content', {
+                widgets: {
+                'apostrophe-rich-text': {toolbar: [ 'Bold', 'Italic' ]},
+                'apostrophe-images': {size: 'full'}
+                }
+            })
+        }}
+      </div>
+    </section>
+  </div>
+{% endblock %}

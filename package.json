@@ -13,7 +13,10 @@
   "author": "P'unk Avenue",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.47.0"
+    "apostrophe": "^2.47.0",
+    "apostrophe-blog": "^2.1.2",
+    "mechanic": "^1.1.0",
+    "nginx": "0.0.0"
   },
   "nodemonConfig": {
     "verbose": true,

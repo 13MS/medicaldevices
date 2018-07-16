@@ -4,25 +4,33 @@
 
 {% extends "layout.html" %}
 
-{% block beforeMain %}
-  <div class="block hero">
-    <div class="inner">
-      <div class="hero-text">
-        <h4>Welcome to my first Apostrophe site!</h4>
-      </div>
-    </div>
-  </div>
-{% endblock %}
-
 {% block main %}
-  <div class="main-content">
-    <h3>Hello world! Test
-      {% if not data.user %}
-        <a class="login-link" href="/login">Login</a>
-      {% endif %}
-    </h3>
-   {{ apos.singleton(data.page, 'textBlock', 'apostrophe-rich-text', {
-      toolbar: [ 'Bold', 'Italic' ]
-    }) }}
+  <div class="main-content {% if data.page.banner %}hasbanner{% endif %} {% if data.page.dark %}dark{% endif %}">
+
+  {% if data.page.banner %}
+  <div class="banner" style="background-image:url({{apos.attachments.url(data.page.banner, { size: 'full' })}})">
+  </div>
+  {% endif %}
+
+  <section id="pageContent">
+    <div class="wrap">
+        <h2>{{data.page.title}}</h2>
+        {{ apos.area(data.page, 'content', {
+                widgets: {
+                'apostrophe-images' : {},
+                'steps-groups': {},
+                'apostrophe-rich-text': {toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+                styles: [
+                    { name: 'Paragraph', element: 'p' },
+                    { name: 'Title 2', element: 'h2' },
+                    { name: 'Title 3', element: 'h3' },
+                    { name: 'Title 4', element: 'h4' }
+                  ]
+                }
+                }
+            })
+        }}
+      </div>
+    </section>
   </div>
 {% endblock %}

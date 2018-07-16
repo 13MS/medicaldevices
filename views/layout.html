@@ -13,17 +13,39 @@
 {% endblock %}
 
 {% block extraHead %}
-  {#
-    This block outputs its contents in the HTML document's <head>.
-    It is a good place to put extra <script> <link> and <meta> tags.
-  #}
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 {% endblock %}
 
 {% block beforeMain %}
-  {#
-    We recommend you use the beforeMain block for global page components
-    like headers or navigation.
-  #}
+  <header id="mainheader">
+    <div class="logo"><a href="{{ data.home._url }}">{{ data.home.title }}</a></div>
+    <div class="rightSide">
+      <a class="button">SHARE</a>
+      <div class="hamburger"><i class="fa fa-bars"></i></div>
+    </div>
+  </header>
+
+    <div id="sideMenu">
+    <header>
+      <a class="button">Close</a>
+    </header>
+    <nav>
+      <ul class="tabs">
+      {% for tab in data.home._children %}
+        <li class="{% if data.page and(apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id)%}current{% endif %}">
+          <a href="{{ tab._url }}">{{ tab.title }}</a>
+          {% if tab._children.length %}
+            <ul>
+              {% for child in tab._children %}
+                <li><a href="{{ child._url }}">{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <nav>
+  </div>
 {% endblock %}
 
 {% block main %}
@@ -35,7 +57,10 @@
 {% endblock %}
 
 {% block afterMain %}
-  {#
-    This would be a great place to put a global footer.
-  #}
+  
+<footer id="mainfooter">
+  <div class="wrap">
+    ©2018 Medical Devices Problems - Website by <a href="https://13milliseconds.com" target="_blank">13milliseconds</a>
+  </div>
+</footer>
 {% endblock %}

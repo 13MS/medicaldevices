@@ -1,0 +1,42 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="main-content {% if data.page.banner %}hasbanner{% endif %}" style="background-color: {{data.page.bgcolor}}">
+
+  <div class="banner" style="background-image:url({{apos.attachments.url(data.page.banner, { size: 'full' })}})">
+  </div>
+  <section id="actIntro">
+    <div class="wrap">
+        <h1>Take Action to ensure the health and safety for all.</h1>
+        <p>You can help create accountability, transparency and safer healthcare. Be an advocate and support policies that promote patient safety. Here are several ways you can take action today.</p>
+    </div>
+  </section>
+  <section id="actContent">
+    <div class="wrap col-group">
+        <div class="col-6">
+            {{ apos.area(data.page, 'contentLeft', {
+                    widgets: {
+                    greybox: {}
+                    }
+                })
+            }}
+        </div>
+        <div class="col-6">
+            {{ apos.area(data.page, 'contentRight', {
+                    widgets: {
+                    greybox: {}
+                    }
+                })
+            }}
+        </div>
+    </div>
+  </section>
+
+
+  </div>
+{% endblock %}

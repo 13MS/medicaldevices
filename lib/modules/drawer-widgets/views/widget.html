@@ -1,0 +1,16 @@
+<div class="drawer">
+    <div class="title">{{data.widget.question}} <i class="fa fa-caret-down"></i></div>
+    <div class="content">
+            {{ apos.area(data.widget, 'answer', {
+            widgets: {
+                'apostrophe-rich-text': {
+                toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+                styles: [
+                    { name: 'Paragraph', element: 'p' }
+                ]
+                },
+                'link': {}
+            }
+            }) }}
+    </div>
+</div>

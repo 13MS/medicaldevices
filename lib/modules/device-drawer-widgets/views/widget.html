@@ -1,0 +1,21 @@
+<div class="deviceDrawer">
+    <div class="title">{{data.widget.title}}<i class="fa fa-caret-down"></i></div>
+    <div class="content col-group">
+        <div class="col-6 image">
+            {{ apos.singleton(data.widget, 'leftCol', 'apostrophe-images', {size: 'full'}) }}
+        </div>
+        <div class="col-6 text">
+            {{ apos.area(data.widget, 'rightCol', {
+            widgets: {
+                'apostrophe-rich-text': {
+                toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+                styles: [
+                    { name: 'Paragraph', element: 'p' }
+                ]
+                },
+                'link': {}
+            }
+            }) }}
+        </div>
+    </div>
+</div>

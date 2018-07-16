@@ -1,0 +1,51 @@
+{#
+  This is a blog page
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+
+{%- macro here(changes) -%}
+    {{ data.page._url | build({
+      year: data.query.year
+    }, changes) }}
+  {%- endmacro -%}
+
+  
+<div class="main-content" style="background-color: {{data.page.bgcolor}}">
+
+  <section id="blog">
+    <div class="wrap">
+      <h1>Top Stories</h1>
+
+      <ul class="apos-blog-filters">
+        <li><a href="{{ here({ year: null }) }}" class="apos-blog-filters-link">All years</a></li>
+        {% for year in data.piecesFilters.year %}
+          <li><a href="{{ here({ year: year.value }) }}" class="apos-blog-filters-link">{{ year.label }}</a></li>
+        {% endfor %}
+      </ul>
+
+
+      {% for piece in data.pieces %}
+        <div class="apos-blog-post-preview col-group">
+          <div class="col-6 image">
+            <img src="{{ apos.attachments.url(piece.image, { size: 'full'}) }}" />
+          </div>
+          <div class="col-6 content">
+            <h6 class="apos-blog-post-date">{{ piece.publishedAt | date('MMMM Do, YYYY') }}</h6>
+            <h4>{{ piece.title }}</h4>
+            {{ piece.textBlock.items[0].content | replace(r/<(.|\n)*?>/g, '') | truncate(200) }}
+            <div>
+              <a class="button" href="{{ piece._url }}">Read More</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </section>
+  </div>
+  
+  {% import 'apostrophe-pager:macros.html' as pager with context %}
+  {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+{% endblock %}

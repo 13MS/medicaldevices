@@ -1,0 +1,5 @@
+#!/bin/bash
+APOS_MINIFY=1 node app apostrophe:generation --create-bundle=prod-bundle &&
+APOS_MONGODB_URI=mongodb://francois:pk9cW92524XtcPZb@ds233571.mlab.com:33571/heroku_q35fk42p node app apostrophe-migrations:migrate &&
+git push heroku &&
+heroku run bash ./deployment/migrate

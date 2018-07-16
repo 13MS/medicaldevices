@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="main-content {% if data.page.banner %}hasbanner{% endif %}" style="background-color: {{data.page.bgcolor}}">
+
+  <div class="banner" style="background-image:url({{apos.attachments.url(data.page.banner, { size: 'full' })}})">
+  </div>
+
+    <section id="pageMenu">
+        <div class="wrap">
+        <h1>{{data.page.title}}</h1>
+        <a href="#findADevice">Find a Device</a>
+        <a href="#questions">Questions and Answers</a>
+        <a href="#media">Media</a>
+        <a href="#organizations">Organizations</a>
+        </div>
+    </section>
+
+  <section id="findADevice">
+    <div class="wrap">
+        <h3>Find a Device</h3>
+        {{ apos.area(data.page, 'devices', {
+                widgets: {
+                'device-drawer': {}
+                }
+            })
+        }}
+      </div>
+    </section>
+
+    <section id="questions">
+    <div class="wrap col-group">
+        <div class="col-4">
+            <h2>Questions & Answers</h2>
+        </div>
+        <div class="col-8">
+            {{ apos.area(data.page, 'answers', {
+                widgets: {
+                    drawer: {}
+                }
+            })
+        }}
+        </div>
+      </div>
+    </section>
+
+    <section id="media">
+    <div class="wrap">
+        <div class="mediaBox reveal col-group">
+            <div class="image col-6">
+            {{ apos.singleton(data.page, 'media1_image', 'apostrophe-images', {}) }}
+            </div>
+            <div class="content col-6">
+                {{ apos.area(data.page, 'media1', {
+                widgets: {
+                    'apostrophe-rich-text': {
+                    toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+                    styles: [{ name: 'Title', element: 'h4' }, { name: 'Paragraph', element: 'p' }]
+                    },
+                    'link': {}
+                }
+                }) }}
+            </div>
+        </div>
+        <div class="mediaBox reveal col-group">
+            <div class="image col-6">
+                {{ apos.singleton(data.page, 'media2_image', 'apostrophe-images', {}) }}
+            </div>
+            <div class="content col-6">
+            {{ apos.area(data.page, 'media2', {
+                widgets: {
+                    'apostrophe-rich-text': {
+                    toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+                    styles: [{ name: 'Title', element: 'h4' }, { name: 'Paragraph', element: 'p' }]
+                    },
+                    'link': {}
+                }
+                }) }}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="organizations">
+    <div class="wrap">
+        <h3>Trusted Organizations</h3>
+        <div>
+        {{ apos.singleton(data.page, 'organizations', 'apostrophe-rich-text', {
+                    toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+                    styles: [{ name: 'Title', element: 'h4' }, { name: 'Paragraph', element: 'p' }]
+                    }
+        ) }}
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}
