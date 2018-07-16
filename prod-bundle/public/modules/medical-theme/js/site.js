@@ -115,7 +115,7 @@ $(function() {
         $('.partTwo').fadeOut(300, function(){$('.partOne').fadeIn(300)});
       }
     }, {
-      offset: '-200%'
+      offset: '-100%'
     })
 
     //Story
@@ -132,13 +132,11 @@ $(function() {
   /////////////////
   // STEPS
   /////////////////
-  if ($('.steps')){
-    $('.steps').each(function(index, group){
+  if ($('.steps.numbered')){
+    $('.steps.numbered').each(function(index, group){
       $('.step', group).each(function(index, obj){
         var number = index + 1;
-        console.log(obj)
         $('.number', obj).text(number);
-        console.log(index + 1);
       })
     });
   }
