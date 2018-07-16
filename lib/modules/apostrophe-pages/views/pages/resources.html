@@ -3,8 +3,9 @@
 {% block main %}
   <div class="main-content {% if data.page.banner %}hasbanner{% endif %}" style="background-color: {{data.page.bgcolor}}">
 
-  <div class="banner" style="background-image:url({{apos.attachments.url(data.page.banner, { size: 'full' })}})">
-  </div>
+    {% if data.page.banner %}
+  <div class="banner" data-parallax="scroll" data-image-src="{{apos.attachments.url(data.page.banner, { size: 'full' })}}"></div>
+  {% endif %}
 
     <section id="pageMenu">
         <div class="wrap">

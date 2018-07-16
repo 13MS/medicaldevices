@@ -8,14 +8,17 @@
 {% block main %}
   <div class="main-content {% if data.page.banner %}hasbanner{% endif %}" style="background-color: {{data.page.bgcolor}}">
 
-  <div class="banner" style="background-image:url({{apos.attachments.url(data.page.banner, { size: 'full' })}})">
-  </div>
+  {% if data.page.banner %}
+  <div class="banner" data-parallax="scroll" data-image-src="{{apos.attachments.url(data.page.banner, { size: 'full' })}}"></div>
+  {% endif %}
+
   <section id="actIntro">
     <div class="wrap">
-        <h1>Take Action to ensure the health and safety for all.</h1>
+        <h1>{{apos.singleton(data.page, 'longerTitle', 'apostrophe-rich-text', {})}}</h1>
         <p>You can help create accountability, transparency and safer healthcare. Be an advocate and support policies that promote patient safety. Here are several ways you can take action today.</p>
     </div>
   </section>
+
   <section id="actContent">
     <div class="wrap col-group">
         <div class="col-6">

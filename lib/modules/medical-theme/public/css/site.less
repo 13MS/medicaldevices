@@ -7,7 +7,8 @@
 @green:     #40D764;
 @blue:      #38C8E8;
 @grey:      #4A4A4A;
-@lightgrey: rgba(0,0,0,.05);
+@lightgrey: #F5F5F5;
+@transgrey: rgba(0,0,0,.3);
 
 // Grid Settings
 @gutterWidth:   0px;
@@ -35,6 +36,15 @@
     font-style: normal;
   }
 
+  //APOSTROPHE UI
+  .apos-ui{
+    font-family: 'AvenirNext-Regular';
+    p {
+        margin-bottom: 20px;
+        line-height: 1.5em;
+    }
+  }
+
 //hide the image titles
 .apos-slideshow h4 { display: none; }
 
@@ -50,9 +60,9 @@ body{
         width: 100%;
         padding: 20px;
         z-index: 98;
-        -webkit-box-shadow: @grey 0px 0 10px;
-        -moz-box-shadow: @grey 0 0 10px;
-        box-shadow: @grey 0 0 10px;
+        -webkit-box-shadow: @transgrey 0px 0 10px;
+        -moz-box-shadow: @transgrey 0 0 10px;
+        box-shadow: @transgrey 0 0 10px;
         .logo{
             float: left;
             a{
@@ -81,10 +91,11 @@ body{
     footer#mainfooter{
         background-color: @black;
         padding: 50px 0;
-        color: @white;
         text-align: center;
+        color: @lightgrey;
+        font-size: .8em;
         a{
-            color: @white;
+            color: @lightgrey;
             &:hover{
                 color: @green;
             }
@@ -151,9 +162,11 @@ body{
     nav{
         text-align: right;
         li{
-            padding-bottom: 50px;
+            margin-bottom: 100px;
+            padding: 0 20px 0 20px;
+            display: inline-block;
             &.current{
-                a{
+                & > a{
                     border-bottom: 2px solid @green;
                 }
             }
@@ -166,8 +179,20 @@ body{
                     color: @green;
                 }
             }
+            &:hover{
+                display: block;
+                li{
+                    display: block;
+                    animation-name: fadeIn;
+                    animation-duration: .5s;
+                    animation-fill-mode: forwards;
+                }
+            }
             li{
+                display: none;
                 margin-top: 20px;
+                margin-bottom: 0;
+                padding: 0;
                 a{
                     color: @grey;
                     font-size: 20px;
@@ -180,7 +205,6 @@ body{
 
 .main-content {
     font-family: 'AvenirNext-Regular', sans-serif;
-    background-color: @white;
     padding-top: 80px;
 
     &.dark{
@@ -193,6 +217,9 @@ body{
         padding: 1em 0;
         line-height: 1.5em;
         margin-bottom: 1em;
+        p{
+            margin-bottom: 0;
+        }
     }
     &.hasbanner{
         h1{
@@ -202,7 +229,6 @@ body{
             margin-top: -2em;
             padding: .5em;
             color: @black;
-            font-size: 50px;
         }
         section:first-of-type{
             padding-top: 0;
@@ -237,11 +263,14 @@ body{
     }
 
     //HOME
+    &.home{
+        padding-top: 0;
+    }
     #progressBar{
         position: fixed;
-        top: 100px;
+        top: 0;
         left: 0;
-        width: 100%;
+        width: 0%;
         height: 5px;
         background-color: @green;
     }
@@ -254,6 +283,9 @@ body{
             p{
                 font-size: 30px;
                 margin-bottom: 50px;
+            }
+            a.button{
+                color: @white;
             }
         }
         .more{
@@ -371,9 +403,9 @@ body{
             -moz-border-radius: 10px;
             border-radius: 10px;
             /* box-shadow */
-            -webkit-box-shadow: @lightgrey 0px 0 10px;
-            -moz-box-shadow: @lightgrey 0 0 10px;
-            box-shadow: @lightgrey 0 0 10px;
+            -webkit-box-shadow: @transgrey 0px 0 10px;
+            -moz-box-shadow: @transgrey 0 0 10px;
+            box-shadow: @transgrey 0 0 10px;
             .content{
                 padding: 20px;
             }
@@ -383,8 +415,8 @@ body{
         background-color: @white;
         text-align: center;
         font-size: 30px;
-        height: 400vh;
-        padding: 25% 0;
+        height: 300vh;
+        padding: 33.33% 0;
         overflow: hidden;
         .whiteBlur{
             background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
@@ -416,6 +448,12 @@ body{
         .partTwo{
             display: none;
         }
+        .secondline{
+            display: none;
+            animation-name: fadeIn;
+            animation-duration: .5s;
+            animation-fill-mode: forwards;
+        }
         &.static{
             .wrap{
                 position: fixed;
@@ -425,6 +463,9 @@ body{
                 .partOne,
                 .partTwo{
                     position: absolute;
+                    .secondline{
+                        display: block;
+                    }
                 }
             }
         }
@@ -551,7 +592,6 @@ body{
     //Pages
 
     .banner{
-        background-color: grey;
         min-height: 500px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -561,8 +601,7 @@ body{
     // ACT
 
     #actIntro{
-        padding-bottom: 100px;
-        height: auto;
+        padding-bottom: 0;
     }
     #actContent{
         .col-6{

@@ -8,7 +8,7 @@
   <div class="main-content {% if data.page.banner %}hasbanner{% endif %} {% if data.page.dark %}dark{% endif %}">
 
   {% if data.page.banner %}
-  <div class="banner" style="background-image:url({{apos.attachments.url(data.page.banner, { size: 'full' })}})">
+  <div class="banner" data-parallax="scroll" data-image-src="{{apos.attachments.url(data.page.banner, { size: 'full' })}}">
   </div>
   {% endif %}
 
