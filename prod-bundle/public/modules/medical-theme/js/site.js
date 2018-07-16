@@ -24,6 +24,16 @@ $(function() {
     $('#sideMenu').removeClass('active');
   });
 
+  $(window).on('load', function() {
+    if ($('video')){
+      $('source').each(function (index, obj) {
+        $(obj).attr('src', $(obj).attr('temp-src'));
+      })
+      $('video')[0].load();
+      $('video')[0].play();
+    }
+  });
+
   //ScrollReveal
   window.sr = ScrollReveal();
   sr.reveal('.reveal');
@@ -48,6 +58,8 @@ $(function() {
 
     $(window).resize(homeResize);
 
+    
+
 
     //Months Animation
     var monthsWaypoint = months.waypoint(function(direction) {
@@ -67,7 +79,32 @@ $(function() {
       DeviceCarouselWrapper.slick({
         slidesToShow: 4,
         slidesToScroll: 1,
-        arrows: false
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
       });
     });
 

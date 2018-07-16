@@ -1,0 +1,118 @@
+body{
+
+    h1{
+        font-size: 2em;
+        padding: 1em 0;
+        line-height: 1.5em;
+        margin-bottom: 1em;
+    }
+    h2{
+        font-size: 40px;
+    }
+    h3{
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: @green;
+        line-height: 1.5em;
+    }
+    h4{
+        font-size: 20px;
+        line-height: 1.5em;
+    }
+    p{
+        line-height: 1.5em;
+        margin-bottom: 1em;
+        a{
+            color: @green;
+        }
+    }
+
+    .wrap {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    header#mainheader{
+        .rightSide{
+            a.button{
+                display: inline-block;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.main-content {
+
+    #intro{
+        .wrap{
+            p{
+                font-size: 25px;
+            }
+        }
+    }
+
+    #months{
+        height: 70vh;
+        .wrap{
+            .centered();
+        }
+        .animation{
+            display: block;
+            position: absolute;
+            width: 100%;
+            bottom: 100px;
+            &.launched{
+                .bar{
+                    animation-name: growing;
+                    animation-duration: 2s;
+                    animation-fill-mode: forwards;
+                }
+                .month{
+                    animation-name: fadeIn;
+                    animation-duration: .5s;
+                    animation-fill-mode: forwards;
+                    &:nth-of-type(2){
+                        animation-delay: .5s;
+                    }
+                    &:nth-of-type(3){
+                        animation-delay: 1s;
+                    }
+                    &:nth-of-type(4){
+                        animation-delay: 1.5s;
+                    }
+                }
+            }
+            .bar{
+                height: 5px;
+                background: @black;
+                position: absolute;
+                width: 0%;
+                left: 0;
+                top: 26px;
+            }
+            .month{
+                float: left;
+                width: 25%;
+                text-align: center;
+                position: relative;
+                z-index: 2;
+                opacity: 0;
+                &:before{
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: @green;
+                    display: block;
+                    margin: 20px auto;
+                }
+            }
+        }
+    }
+    #oneinten{
+        .firstline{
+            font-size: 4em;
+        }
+    }
+}
