@@ -714,13 +714,19 @@ body{
         }
     }
 }
-
-.step{
-    margin-bottom: 50px;
-    header{
-        font-size: 1.5em;
-        margin-bottom: 20px;
-        .number{
+.steps{
+    .step{
+        margin-bottom: 50px;
+        header{
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            .number{
+                display: none;
+            }
+        }
+    }
+    &.numbered{
+        .step header .number{
             display: inline-block;
             padding: 20px 25px;
             margin-right: 20px;
@@ -728,6 +734,7 @@ body{
         }
     }
 }
+
 
 @keyframes fadeIn {
     0%   {opacity: 0;}
