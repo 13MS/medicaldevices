@@ -26,15 +26,22 @@
 
 
 @font-face {
-    font-family: 'AvenirNext-Regular';
-    src: url('/modules/medical-theme/fonts/AvenirNext-Regular.eot?#iefix') format('embedded-opentype'),  url('/modules/medical-theme/fonts/AvenirNext-Regular.woff') format('woff'), url('/modules/medical-theme/fonts/AvenirNext-Regular.ttf')  format('truetype'), url('/modules/medical-theme/fonts/AvenirNext-Regular.svg#AvenirNext-Regular') format('svg');
-    font-weight: normal;
+    font-family: 'Graphik';
+    src: url('/modules/medical-theme/fonts/Graphik-Regular.eot?#iefix') format('embedded-opentype'),  url('/modules/medical-theme/fonts/Graphik-Regular.woff') format('woff'), url('/modules/medical-theme/fonts/Graphik-Regular.ttf')  format('truetype'), url('/modules/medical-theme/fonts/Graphik-Regular.svg#Graphik-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/modules/medical-theme/fonts/Graphik-Medium.eot?#iefix') format('embedded-opentype'),  url('/modules/medical-theme/fonts/Graphik-Medium.woff') format('woff'), url('/modules/medical-theme/fonts/Graphik-Medium.ttf')  format('truetype'), url('/modules/medical-theme/fonts/Graphik-Medium.svg#Graphik-Regular') format('svg');
+    font-weight: 600;
     font-style: normal;
   }
 
   //APOSTROPHE UI
   .apos-ui{
-    font-family: 'AvenirNext-Regular';
+    font-family: 'Graphik';
     p {
         margin-bottom: 20px;
         line-height: 1.5em;
@@ -45,7 +52,7 @@
 .apos-slideshow h4 { display: none; }
 
 body{
-    font-family: 'AvenirNext-Regular', sans-serif;
+    font-family: 'Graphik', sans-serif;
     background-color: @white;
 
     h1{
@@ -143,10 +150,10 @@ body{
         background-color: @black;
         padding: 50px 0;
         text-align: center;
-        color: @lightgrey;
+        color: #777;
         font-size: .8em;
         a{
-            color: @lightgrey;
+            color: #777;
             &:hover{
                 color: @green;
             }
@@ -240,6 +247,7 @@ body{
             a{
                 display: inline-block;
                 font-size: 30px;
+                font-weight: 600;
                 color: @black;
                 transition: .2s;
                 &:hover{
@@ -256,6 +264,7 @@ body{
                 a{
                     color: @grey;
                     font-size: 20px;
+                    font-weight: 400;
                 }
             }
         }
@@ -264,7 +273,7 @@ body{
 
 
 .main-content {
-    font-family: 'AvenirNext-Regular', sans-serif;
+    font-family: 'Graphik-Regular', sans-serif;
     padding-top: 80px;
     min-height: 100vh;
 
@@ -312,6 +321,7 @@ body{
             .centered();
             p{
                 font-size: 25px;
+                font-weight: 600;
                 margin-bottom: 50px;
             }
             a.button{
@@ -352,6 +362,9 @@ body{
         color: @white;
         padding: 100px 0 200px;
         margin: 0;
+        h2{
+            font-weight: 600;
+        }
         .col-6{
             padding: 0 50px;
         }
@@ -402,6 +415,9 @@ body{
             box-shadow: @transgrey 0 0 10px;
             .content{
                 padding: 20px;
+                h4{
+                    font-weight: 600;
+                }
             }
         }
     }
@@ -441,6 +457,7 @@ body{
             width: 100%;
             line-height: 1.3em;
             font-size: .9em;
+            font-weight: 600;
         }
         .partTwo{
             display: none;
@@ -643,6 +660,9 @@ body{
         }
         .content{
             padding: 50px!important;
+            a.button{
+                float: left;
+            }
         }
     }
     #organizations{
@@ -650,6 +670,12 @@ body{
             & > div{
                 column-count: 3;
                 column-gap: 20px;
+            }
+            a{
+                color: @black;
+                &:hover{
+                    color: @green;    
+                }
             }
         }
     }
