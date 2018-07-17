@@ -13,6 +13,16 @@
 {% endblock %}
 
 {% block extraHead %}
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#603cba">
+<meta name="theme-color" content="#ffffff">
+
+
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 {% endblock %}
 
@@ -20,7 +30,7 @@
   <header id="mainheader">
     <div class="logo"><a href="{{ data.home._url }}"><img src="images/logo-icon.svg" />{{ data.home.title }}</a></div>
     <div class="rightSide">
-      <a class="button">SHARE</a>
+      <a class="button">Share</a>
       <div class="hamburger"><i class="fa fa-bars"></i></div>
     </div>
   </header>

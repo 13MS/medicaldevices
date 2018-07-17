@@ -91,6 +91,7 @@ body{
         -webkit-box-shadow: @transgrey 0px 0 10px;
         -moz-box-shadow: @transgrey 0 0 10px;
         box-shadow: @transgrey 0 0 10px;
+        //transition: .2s;
         &.dark{
             background-color: @black;
             color: @white;
@@ -106,11 +107,15 @@ body{
         }
         .logo{
             float: left;
+            letter-spacing: .03em;
+            font-size: 1.2em;
+            padding: 10px 0;
             a{
                 color: @black;
                 vertical-align: middle;
             }
             img{
+                display: none;
                 width: 30px;
                 vertical-align: middle;
                 margin-right: 20px;
@@ -243,15 +248,8 @@ body{
             }
             &:hover{
                 display: block;
-                li{
-                    display: block;
-                    animation-name: fadeIn;
-                    animation-duration: .5s;
-                    animation-fill-mode: forwards;
-                }
             }
             li{
-                display: none;
                 margin-top: 20px;
                 margin-bottom: 0;
                 padding: 0;
