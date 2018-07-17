@@ -40,6 +40,10 @@ body{
             }
         }
     }
+
+    #sideMenu{
+        width: 400px;
+    }
 }
 
 .main-content {
@@ -51,17 +55,26 @@ body{
             }
         }
     }
-
+    #definition{
+        padding: 200px 0 300px;
+        background-image: url('/images/definition_bg.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 100% 50%;
+    }
     #months{
         height: 70vh;
+        min-height: 800px;
         .wrap{
             .centered();
+            top: 33%;
         }
         .animation{
             display: block;
             position: absolute;
             width: 100%;
-            bottom: 100px;
+            bottom: 33%;
+            transform: translateY(50%);
             &.launched{
                 .bar{
                     animation-name: growing;
@@ -114,5 +127,46 @@ body{
         .firstline{
             font-size: 4em;
         }
+    }
+    #story{
+        height: 100vh;
+        .wrap{
+            .centered();
+        }
+        .bottom{
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .storyPlayer{
+            .player-wrap{
+                max-width: 900px;
+                margin: 100px auto;
+            }
+            .close{
+                top: 0px;
+                right: 0px;
+                color: @white;
+            }
+        }
+    }
+    #act{
+        .action{
+            h4{
+                font-size: 30px;
+                padding: 30px;
+            }
+            .action-inner{
+                height: 500px;
+                .content{
+                    bottom: 50px;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+    #about{
+        padding: 200px 0;
     }
 }

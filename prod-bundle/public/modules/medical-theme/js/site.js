@@ -66,7 +66,7 @@ $(function() {
       if (direction === 'down') $('.animation', months).addClass('launched') 
       else $('.animation', months).removeClass('launched')
     }, {
-      offset: '25%'
+      offset: '70%'
     })
 
     $('.counter').counterUp({
@@ -77,6 +77,7 @@ $(function() {
     //Slick
     $(document).ready(function(){
       DeviceCarouselWrapper.slick({
+        infinite: false,
         slidesToShow: 4,
         slidesToScroll: 1,
         arrows: false,

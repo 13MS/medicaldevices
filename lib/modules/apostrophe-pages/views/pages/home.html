@@ -5,6 +5,38 @@
 
 {% extends "layout.html" %}
 
+{% block beforeMain %}
+  <header class="dark" id="mainheader">
+    <div class="logo"><a href="{{ data.home._url }}"><img src="images/logo-icon.svg" />{{ data.home.title }}</a></div>
+    <div class="rightSide">
+      <a class="button">SHARE</a>
+      <div class="hamburger"><i class="fa fa-bars"></i></div>
+    </div>
+  </header>
+
+    <div id="sideMenu">
+    <header>
+      <a class="button">Close</a>
+    </header>
+    <nav>
+      <ul class="tabs">
+      {% for tab in data.home._children %}
+        <li class="{% if data.page and(apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id)%}current{% endif %}">
+          <a href="{{ tab._url }}">{{ tab.title }}</a>
+          {% if tab._children.length %}
+            <ul>
+              {% for child in tab._children %}
+                <li><a href="{{ child._url }}">{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <nav>
+  </div>
+{% endblock %}
+
 {% block main %}
   <div class="main-content home">
 
@@ -52,15 +84,15 @@
 
 
   <section id="examples" class="col-group">
+    <div class="slickNav">
+    <a class="prev"><img src="/images/arrow.svg"/></a> <a class="next"><img src="/images/arrow.svg"/></a>
+    </div>
     <div class="deviceGroup">
       {{ apos.area(data.page, 'devices', {
         widgets: {
           'device': {}
         }
       }) }}
-    </div>
-    <div class="slickNav">
-    <a class="prev"><img src="/images/arrow.svg"/></a> <a class="next"><img src="/images/arrow.svg"/></a>
     </div>
   </section>
 

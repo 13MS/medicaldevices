@@ -91,11 +91,29 @@ body{
         -webkit-box-shadow: @transgrey 0px 0 10px;
         -moz-box-shadow: @transgrey 0 0 10px;
         box-shadow: @transgrey 0 0 10px;
+        &.dark{
+            background-color: @black;
+            color: @white;
+            .logo a{
+                color: @white;
+            }
+            a.button{
+                color: @white;
+            }
+            .hamburger{
+                color: @white;
+            }
+        }
         .logo{
             float: left;
             a{
                 color: @black;
                 vertical-align: middle;
+            }
+            img{
+                width: 30px;
+                vertical-align: middle;
+                margin-right: 20px;
             }
         }
         .rightSide{
@@ -187,7 +205,6 @@ body{
 #sideMenu{
     background-color: @white;
     position: fixed;
-    width: 400px;
     min-height: 100%;
     right: 0;
     z-index: 99;
@@ -335,12 +352,8 @@ body{
     #definition{
         background-color: @black;
         color: @white;
-        padding: 200px 0 300px;
+        padding: 100px 0 200px;
         margin: 0;
-        background-image: url('/images/definition_bg.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 100% 50%;
         .col-6{
             padding: 0 50px;
         }
@@ -355,7 +368,6 @@ body{
         }
         .slickNav{
             text-align: center;
-            padding: 20px 0;
             .next{
                 &:hover{
                     padding-left: 20px;
@@ -414,6 +426,7 @@ body{
         }
         .firstline{
             font-size: 2em;
+            line-height: 1.5em;
             div{
                 display: inline-block;
             }
@@ -428,6 +441,8 @@ body{
         .partTwo{
             transform: translateY(-50%);
             width: 100%;
+            line-height: 1.3em;
+            font-size: .9em;
         }
         .partTwo{
             display: none;
@@ -455,12 +470,11 @@ body{
         }
     }
     #story{
-        height: 100vh;
         background-color: @black;
         color: @white;
         position: relative;
+        z-index: 1;
         .wrap{
-            .centered();
             z-index: 2;
             p{
                 font-size: 30px;
@@ -468,13 +482,10 @@ body{
             }
         }
         .bottom{
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
             max-width: 300px;
             text-align: center;
             z-index: 2;
+            margin: 0 auto;
             .launch{
                 display: inline-block;
                 border-radius: 50%;
@@ -500,19 +511,18 @@ body{
             overflow: auto;
             .player-wrap{
                 background: @white;
-                max-width: 900px;
-                margin: 100px auto;
+                margin: 0px auto;
                 padding: 100px 50px;
                 color: @black;
             }
             .close{
                 position: fixed;
-                top: 0px;
+                top: 50px;
                 right: 0px;
                 padding: 30px;
                 font-size: 30px;
                 cursor: pointer;
-                color: @white;
+                color: @black;
                 &:hover{
                     color: @green;
                 }
@@ -526,6 +536,7 @@ body{
             position: absolute;
             overflow: hidden;
             opacity: .6;
+            z-index: -1;
             video{
                 position: absolute;
                 min-width: 100%;
@@ -546,8 +557,12 @@ body{
             padding: 0;
             text-align: center;
             background-color: @black;
+            h4{
+                font-size: 30px;
+                padding: 0 30px;
+            }
             .action-inner{
-                height: 500px;
+                height: 300px;
                 position: relative;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -560,7 +575,8 @@ body{
                 .content{
                     position: absolute;
                     width: 100%;
-                    bottom: 50px;
+                    bottom: 50%;
+                    transform: translateY(50%);
                 }
             }
         }
@@ -569,8 +585,10 @@ body{
         background-color: @black;
         color: @white;
         height: auto;
-        padding: 200px 0;
         text-align: center;
+        h3{
+            color: @white;
+        }
     }
 
     //Pages
