@@ -130,8 +130,32 @@ body{
         }
         .rightSide{
             float: right;
+            &.active{
+                background: @white;
+                #share{
+                    width: 15em;
+                }
+            }
             a.button{
                 display: none;
+            }
+            #share{
+                display: inline-block;
+                background-color: @white;
+                width: 0;
+                height: .8em;
+                overflow: hidden;
+                transition: .5s;
+                white-space: nowrap;
+                a{
+                    display: inline-block;
+                    color: @black;
+                    padding-right: 20px;
+                    font-weight: 600;
+                    &:hover{
+                        color: @green;
+                    }
+                }
             }
             .hamburger{
                 display: inline-block;
@@ -164,7 +188,7 @@ body{
         margin: 0 auto;
     }
     strong{
-        color: @green;
+        font-weight: 600;
     }
     a{
         text-decoration: none;
@@ -192,7 +216,8 @@ body{
             z-index: -1;
             transition: .3s;
         }
-        &:hover:after{
+        &:hover:after,
+        &.active:after{
             width: 100%;
         }
     }

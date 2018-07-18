@@ -9,7 +9,22 @@
   <header class="dark" id="mainheader">
     <div class="logo"><a href="{{ data.home._url }}"><img src="images/logo-icon.svg" />{{ data.home.title }}</a></div>
     <div class="rightSide">
-      <a class="button">Share</a>
+      <a class="button shareButton">Share</a>
+      <div id="share">
+          <a id="facebookShare" href="#">Facebook</a>
+          <a href="https://twitter.com/share?text=Learn%20more%20about%20medical%20devices%20problems" target="_blank">Twitter</a>
+          <a href="mailto:?subject=Medical%20Devices%20Problems&body=Learn about medical devices problems at http://medicaldevicesproblems.com">Email</a>
+          <script>
+          document.getElementById('facebookShare').onclick = function(e) {
+            e.preventDefault();
+            FB.ui({
+              method: 'share',
+              display: 'popup',
+              href: 'https://developers.facebook.com/docs/',
+            }, function(response){});
+          }
+          </script>
+      </div>
       <div class="hamburger"><i class="fa fa-bars"></i></div>
     </div>
   </header>
@@ -101,7 +116,7 @@
     <div class="wrap">
       <div class="partOne">
         <div class="firstline"><div class="one">One</div> in <div class="ten">Ten</div></div>
-        <div class="secondline">will be implanted with at least one device over their lifetime.</div>
+        <div class="secondline">Americans will be implanted with at least one device over their lifetime.</div>
       </div>
         <div class="partTwo">The overwhelming majority of high-risk implanted devices <strong>never</strong> require a single clinical trial.</div>
     </div>
@@ -172,6 +187,7 @@
     
   </section>
 
+{# 
   <section id="about">
     <div class="wrap">
     {{ apos.singleton(data.page, 'about_text', 'apostrophe-rich-text', {
@@ -183,6 +199,8 @@
       }) }}
     </div>
   </section>
+  #}
+
   <div id="progressBar"></div>
   </div>
 {% endblock %}

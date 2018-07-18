@@ -23,9 +23,12 @@ $(function() {
   $('#sideMenu header a').click(function(){
     $('#sideMenu').removeClass('active');
   });
+  $('.shareButton').click(function () {
+    $('.rightSide').toggleClass('active');
+  });
 
   $(window).on('load', function() {
-    if ($('video')){
+    if ($('video').length){
       $('source').each(function (index, obj) {
         $(obj).attr('src', $(obj).attr('temp-src'));
       })
