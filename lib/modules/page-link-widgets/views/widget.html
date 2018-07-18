@@ -1,4 +1,4 @@
-<a class="button" href="{{ data.widget._page._url }}{% if data.widget.anchor %}#{{data.widget.anchor}}{%endif%}">
+<a {% if data.widget.button %}class="button"{% endif %} href="{{ data.widget._page._url }}{% if data.widget.anchor %}#{{data.widget.anchor}}{%endif%}">
     {% if data.widget.custom_name %}
         {{data.widget.custom_name}}
     {% else %}

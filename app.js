@@ -30,6 +30,7 @@ var apos = require('apostrophe')({
     'device-widgets': {},
     'action-box-widgets': {},
     'youtube-player-widgets': {},
+    'menu-item-widgets': {},
 
 
     //Blog modules

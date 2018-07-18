@@ -55,20 +55,11 @@
       <a class="button">Close</a>
     </header>
     <nav>
-      <ul class="tabs">
-      {% for tab in data.home._children %}
-        <li class="{% if data.page and(apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id)%}current{% endif %}">
-          <a href="{{ tab._url }}">{{ tab.title }}</a>
-          {% if tab._children.length %}
-            <ul>
-              {% for child in tab._children %}
-                <li><a href="{{ child._url }}">{{ child.title }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+    {{ apos.area(data.global, 'side_menu', {
+        widgets: {
+          'menu-item': {}
+        }
+    })}}
     <nav>
   </div>
   </div>
@@ -86,7 +77,9 @@
   
 <footer id="mainfooter">
   <div class="wrap">
-    ©2018 Medical Devices Problems - Website by <a href="https://13milliseconds.com" target="_blank">13milliseconds</a>
+  {{apos.singleton(data.global, 'footer', 'apostrophe-rich-text', {
+    toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
+  })}}
   </div>
 </footer>
 {% endblock %}

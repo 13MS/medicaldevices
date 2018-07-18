@@ -1,0 +1,8 @@
+<li>
+    {{ apos.singleton(data.widget, 'main_item', { edit: false }) }}
+    {% if data.widget.secondary_items %}
+    <ul>
+        {{ apos.area(data.widget, 'secondary_items', { edit: false }) }}
+    </ul>
+    {% endif %}
+</li>
