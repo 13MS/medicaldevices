@@ -47,6 +47,7 @@
 
     <section id="media">
     <div class="wrap">
+    <h3>Media</h3>
         <div class="mediaBox reveal col-group">
             <div class="image col-6">
             {{ apos.singleton(data.page, 'media1_image', 'apostrophe-images', {}) }}
@@ -86,11 +87,15 @@
     <div class="wrap">
         <h3>Trusted Organizations</h3>
         <div>
-        {{ apos.singleton(data.page, 'organizations', 'apostrophe-rich-text', {
+        {{ apos.area(data.page, 'organizations', {
+                widgets: {
+                    'apostrophe-rich-text': {
                     toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
                     styles: [{ name: 'Title', element: 'h4' }, { name: 'Paragraph', element: 'p' }]
-                    }
-        ) }}
+                    },
+                    'apostrophe-images': {size: 'one-third', limit: 1}
+                }
+        }) }}
         </div>
       </div>
     </section>

@@ -1,1 +1,7 @@
-<a class="button" href="{{ data.widget._page._url }}">{{ data.widget._page.title }}</a>
+<a class="button" href="{{ data.widget._page._url }}{% if data.widget.anchor %}#{{data.widget.anchor}}{%endif%}">
+    {% if data.widget.custom_name %}
+        {{data.widget.custom_name}}
+    {% else %}
+        {{ data.widget._page.title }}
+    {% endif %}
+</a>

@@ -704,9 +704,19 @@ body{
     }
     #organizations{
         .wrap{
-            & > div{
+            text-align: left;
+            div[data-apos-area-edit]{
+                column-count: 1;
+            }
+            & > div > div{
                 column-count: 3;
                 column-gap: 20px;
+            }
+            .apos-slideshow-item{
+                background-position: left;
+            }
+            img{
+                max-width: 200px;
             }
             a{
                 color: @black;
