@@ -298,14 +298,12 @@ body{
             &:hover{
                 display: block;
             }
-            li{
-                margin-top: 20px;
-                margin-bottom: 0;
-                padding: 0;
+            ul{
                 a{
                     color: @grey;
                     font-size: 20px;
                     font-weight: 400;
+                    margin-top: 20px;
                 }
             }
         }
@@ -704,9 +702,19 @@ body{
     }
     #organizations{
         .wrap{
-            & > div{
+            text-align: left;
+            div[data-apos-area-edit]{
+                column-count: 1;
+            }
+            & > div > div{
                 column-count: 3;
                 column-gap: 20px;
+            }
+            .apos-slideshow-item{
+                background-position: left;
+            }
+            img{
+                max-width: 200px;
             }
             a{
                 color: @black;
