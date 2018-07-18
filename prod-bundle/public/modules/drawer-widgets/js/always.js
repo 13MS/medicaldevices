@@ -3,7 +3,7 @@ apos.define('drawer-widgets', {
     construct: function(self, options) {
       self.play = function($widget, data, options) {
           //The actual functions
-          $widget.click('.title', function(e) {
+          $widget.find('.title').click(function(e) {
           if ($widget.find('.drawer').hasClass('active')){
             $('.drawer.active').removeClass('active')
           } else {
