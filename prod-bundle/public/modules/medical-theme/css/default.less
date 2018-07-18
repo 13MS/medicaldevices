@@ -54,6 +54,11 @@
 body{
     font-family: 'Graphik', sans-serif;
     background-color: @white;
+    h1, h2, h3, h4, h5, h6{
+        strong{
+            color: @green;
+        }
+    }
 
     h1{
         font-size: 2em;
@@ -85,6 +90,9 @@ body{
         a{
             color: @green;
         }
+    }
+    em{
+        font-style: italic;
     }
 
     header#mainheader{
@@ -562,17 +570,13 @@ body{
                 margin: 0px auto;
                 padding: 100px 50px;
                 color: @black;
-            }
-            .close{
-                position: fixed;
-                top: 50px;
-                right: 0px;
-                padding: 30px;
-                font-size: 30px;
-                cursor: pointer;
-                color: @black;
-                &:hover{
-                    color: @green;
+                position: relative;
+                .close{
+                    position: absolute;
+                    top: 50px;
+                    right: 0px;
+                    margin: 0;
+                    cursor: pointer;
                 }
             }
         }

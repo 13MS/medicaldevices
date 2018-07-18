@@ -52,14 +52,16 @@
   </div>
 {% endblock %}
 
+
+
 {% block main %}
   <div class="main-content home">
 
   
   <section id="intro">
-    <div class="wrap">{{ apos.singleton(data.page, 'intro_text', 'apostrophe-rich-text', {
+    <div class="wrap"><h2>{{ apos.singleton(data.page, 'intro_text', 'apostrophe-rich-text', {
           toolbar: [ 'Bold' ]
-        }) }}
+        }) }}</h2>
     <a class="button" href="/take-action">I've been affected by a device</a>    
     <a class="button" href="/resources">I'm thinking about getting a device</a>    
     </div>
@@ -137,6 +139,7 @@
     </div>
     <div class="storyPlayer">
       <div class="player-wrap">
+        <a class="button close">Close</a>
           <h2>Angie Firmalino</h2>
           {{ apos.area(data.page, 'story', { 
             widgets: {
@@ -149,7 +152,6 @@
             }
           }) }}
       </div>
-      <div class="close"><i class="fa fa-times"></i></div>
     </div>
     <div class="backgroundVideo">
       <video autoplay muted loop poster="">
