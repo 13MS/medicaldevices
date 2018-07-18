@@ -29,6 +29,7 @@ var apos = require('apostrophe')({
     'steps-groups-widgets': {},
     'device-widgets': {},
     'action-box-widgets': {},
+    'youtube-player-widgets': {},
 
 
     //Blog modules

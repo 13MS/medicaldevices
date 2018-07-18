@@ -105,11 +105,18 @@ body{
             .logo a{
                 color: @white;
             }
-            a.button{
-                color: @white;
-            }
-            .hamburger{
-                color: @white;
+            .rightSide{
+                a.button{
+                    color: @white;
+                }
+                #share{
+                    a{
+                        color: @white;
+                    }
+                }
+                .hamburger{
+                    color: @white;
+                }
             }
         }
         .logo{
@@ -131,7 +138,9 @@ body{
         .rightSide{
             float: right;
             &.active{
-                background: @white;
+                .shareButton:after{
+                    width: 100%;
+                }
                 #share{
                     width: 15em;
                 }
@@ -141,7 +150,6 @@ body{
             }
             #share{
                 display: inline-block;
-                background-color: @white;
                 width: 0;
                 height: .8em;
                 overflow: hidden;

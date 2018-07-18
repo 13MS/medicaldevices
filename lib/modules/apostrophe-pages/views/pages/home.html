@@ -138,16 +138,16 @@
     <div class="storyPlayer">
       <div class="player-wrap">
           <h2>Angie Firmalino</h2>
-          {{ apos.singleton(data.page, 'story', 'apostrophe-rich-text', {
-            toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ],
-            styles: [
-              { name: 'Heading', element: 'h3' },
-              { name: 'Paragraph', element: 'p' }
-            ]
+          {{ apos.area(data.page, 'story', { 
+            widgets: {
+              'apostrophe-rich-text': {
+                  toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ],
+                  styles: [{ name: 'Heading', element: 'h3' },{ name: 'Paragraph', element: 'p' }]
+              },
+              'apostrophe-images': {size: 'full'},
+              'youtube-player': {}
+            }
           }) }}
-          <div class="iframeWrap">
-            <iframe src="https://www.youtube.com/embed/m4krz1cTmmU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
       </div>
       <div class="close"><i class="fa fa-times"></i></div>
     </div>
