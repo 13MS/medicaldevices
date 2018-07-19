@@ -420,10 +420,23 @@ body{
             padding: 20px;
         }
         .slickNav{
-            text-align: center;
+            div{
+                &:first-child{
+                    text-align: right;
+                }
+                a{
+                    display: inline-block;
+                    padding: 0 10px;
+                    cursor: pointer;
+                    transition: .3s;
+                    &.inactive{
+                        opacity: 0;
+                    }
+                }
+            }
             .next{
                 &:hover{
-                    padding-left: 20px;
+                    padding-left: 30px;
                 }
                 img{
                     transform: rotate(-90deg);
@@ -431,16 +444,11 @@ body{
             }
             .prev{
                 &:hover{
-                    padding-right: 20px;
+                    padding-right: 30px;
                 }
                 img{
                     transform: rotate(90deg);
                 }
-            }
-            a{
-                margin: 0 10px;
-                cursor: pointer;
-                transition: .3s;
             }
         }
         .device{
