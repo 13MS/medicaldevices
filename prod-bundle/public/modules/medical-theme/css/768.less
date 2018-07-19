@@ -49,6 +49,13 @@ body{
 
 .main-content {
 
+    section{
+        padding: 100px 0;
+    }
+    .banner{
+        min-height: 500px;
+    }
+
     #intro{
         .wrap{
             p{
@@ -127,6 +134,11 @@ body{
             }
         }
     }
+    #examples{
+        .device{
+            margin-top: 20px;
+        }
+    }
     #oneinten{
         .firstline{
             font-size: 4em;
@@ -136,6 +148,9 @@ body{
         height: 100vh;
         .wrap{
             .centered();
+            p{
+                font-size: 30px;
+            }
         }
         .bottom{
             position: absolute;
@@ -161,7 +176,7 @@ body{
                 padding: 30px;
             }
             .action-inner{
-                height: 500px;
+                height: 80vh;
                 .content{
                     bottom: 50px;
                     transform: translateY(0);
@@ -171,5 +186,18 @@ body{
     }
     #about{
         padding: 200px 0;
+    }
+
+    .mediaBox {
+        .content{
+            padding: 50px!important;
+        }
+    }
+    .deviceDrawer{
+        .content{
+            .text{
+                padding: 0 0 0 20px!important;
+            }
+        }
     }
 }
