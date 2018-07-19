@@ -22,6 +22,7 @@ var apos = require('apostrophe')({
     'medical-theme' : {},
     'greybox-widgets': {},
     'link-widgets': {},
+    'image-link-widgets': {},
     'page-link-widgets': {},
     'device-drawer-widgets': {}, 
     'drawer-widgets': {},
