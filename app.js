@@ -33,6 +33,8 @@ var apos = require('apostrophe')({
     'youtube-player-widgets': {},
     'menu-item-widgets': {},
 
+    //SEO Module
+    'apostrophe-seo': {},
 
     //Blog modules
     'apostrophe-blog': {contextual: true},
