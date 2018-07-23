@@ -55,7 +55,7 @@
           toolbar: [ 'Bold' ]
         }) }}</h2>
     <a class="button" href="/take-action">I've been affected by a device</a>    
-    <a class="button" href="/resources">I'm thinking about getting a device</a>    
+    <a class="button" href="/resources">I'm looking to learn more about medical devices</a>    
     </div>
     <div class="more">
       <a href="#months">
@@ -93,6 +93,8 @@
 
 
   <section id="examples" class="col-group">
+  <h3>Examples</h3>
+  <a href="/resources#findADevice">Learn more about these devices</a>
     <div class="slickNav col-group">
       <div class="col-6 col-mb-6">
         <a class="prev"><img src="/images/arrow.svg"/></a>
@@ -130,10 +132,14 @@
         }) }}</div>
     </div>
     <div class="bottom">
-      <a class="launch"><i class="fa fa-align-left"></i></a>
-      <h4>See Angie Firmalino’s Story</h4>
-      <p>President of ASHES Nonprofit, Founder and Head Administrator of Essure Problems</p>
+    <div class="wrap">
+      {#<a class="launch"><i class="fa fa-align-left"></i></a>#}
+      <p>Angie Firmalino founded Essure Problems, a 36,000+ strong patient advocacy group, that now brings together patients and activists together fighting for medical device safety. Through her personal story and the forming of the E-Sisters, Angie has propelled forward the fight to remove Essure off the American market, with Bayer finally announcing on July 20, 2018 its plan to pull the device from American markets.</p>
+      <p>You can watch Angie's story in The Bleeding Edge documentary, on Netflix.</p>
+      <a class="button" target="_blank" href="">Watch Now</a>
+      </div>
     </div>
+    {#
     <div class="storyPlayer">
       <div class="player-wrap">
         <a class="button close">Close</a>
@@ -150,13 +156,14 @@
           }) }}
       </div>
     </div>
+    #}
     <div class="backgroundVideo">
       <video autoplay muted loop poster="">
         <source temp-src="videos/test.mp4" type="video/mp4" />
         <source temp-src="videos/test.ogg" type="video/ogg" />
         <source temp-src="videos/test.webm" type="video/webm" />
       </video>
-    </div>
+    </div> 
   </section>
   <section id="questions">
     <div class="wrap col-group">

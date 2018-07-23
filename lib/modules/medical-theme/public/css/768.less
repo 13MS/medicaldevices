@@ -151,7 +151,7 @@ body{
     }
     #story{
         height: 100vh;
-        .wrap{
+        & > .wrap{
             .centered();
             p{
                 font-size: 30px;
@@ -159,9 +159,8 @@ body{
         }
         .bottom{
             position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
+            bottom: 0;
         }
         .storyPlayer{
             .player-wrap{

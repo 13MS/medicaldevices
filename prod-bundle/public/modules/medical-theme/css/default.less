@@ -551,7 +551,7 @@ body{
         color: @white;
         position: relative;
         z-index: 1;
-        .wrap{
+        & > .wrap{
             z-index: 2;
             p{
                 font-size: 23px;
@@ -559,10 +559,14 @@ body{
             }
         }
         .bottom{
-            max-width: 300px;
+            background-color: @black;
             text-align: center;
             z-index: 2;
-            margin: 0 auto;
+            padding: 50px 0;
+            a{
+                color: @white;
+            }
+            //margin: 0;
             .launch{
                 display: inline-block;
                 border-radius: 50%;
@@ -784,20 +788,31 @@ body{
 .steps{
     .step{
         margin-bottom: 50px;
-        header{
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            .number{
-                display: none;
+        .number{
+            &:before{
+                content: '';
+                width: 30px;
+                height: 5px;
+                background-color: @green;
+                display: block;
+                margin-top: .5em;
             }
+        }
+        h4{
+            font-size: 1.5em;
         }
     }
     &.numbered{
-        .step header .number{
-            display: inline-block;
-            padding: 20px 25px;
-            margin-right: 20px;
-            background-color: @green;
+        .step .number{
+            &:before{
+                height: 0;
+            }
+            span{
+                display: inline-block;
+                padding: 20px 25px;
+                margin-right: 20px;
+                background-color: @green;
+            }
         }
     }
 }

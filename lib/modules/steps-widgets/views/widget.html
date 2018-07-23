@@ -1,9 +1,7 @@
-<div class="step reveal">
-    <header>
-        <div class="number"></div>
-        {{ data.widget.title }}
-    </header>
-    <div class="text">
+<div class="step reveal col-group">
+    <div class="number col-1"><span></span></div>
+    <div class="text col-11">
+        <h4>{{ data.widget.title }}</h4>
         {{ apos.area(data.widget, 'content', { edit: false }) }}
     </div>
 </div>

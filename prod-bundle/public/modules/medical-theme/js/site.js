@@ -199,7 +199,7 @@ $(function() {
     $('.steps.numbered').each(function(index, group){
       $('.step', group).each(function(index, obj){
         var number = index + 1;
-        $('.number', obj).text(number);
+        $('.number span', obj).text(number);
       })
     });
   }
