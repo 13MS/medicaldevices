@@ -177,15 +177,18 @@ $(function() {
 
     //Story
     $('.launch').click(function(){
+      $('iframe', storyPlayer)[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
       storyPlayer.fadeIn();
     });
     storyPlayer.click(function(){
+      $('iframe', storyPlayer)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
       storyPlayer.fadeOut();
     });
     storyPlayer.on('click', 'div', function(e){
       e.stopPropoagation();
     });
     $('.close').click(function(){
+      $('iframe', storyPlayer)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
       storyPlayer.fadeOut();
     });
 
@@ -203,6 +206,7 @@ $(function() {
       })
     });
   }
+
 
 
 

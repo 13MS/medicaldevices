@@ -6,7 +6,7 @@
   <div class="main-content about {% if data.page.banner %}hasbanner{% endif %}" style="background-color: {{data.page.bgcolor}}">
 
   {% if data.page.banner %}
-  <div class="banner" style="background-image:url({{apos.attachments.url(data.page.banner, { size: 'full' })}})">
+  <div class="banner" data-parallax="scroll" data-image-src="{{apos.attachments.url(data.page.banner, { size: 'full' })}}">
   </div>
   {% endif %}
 

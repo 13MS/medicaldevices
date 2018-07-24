@@ -51,6 +51,11 @@
 //hide the image titles
 .apos-slideshow h4 { display: none; }
 
+//Fixing a parallax problem
+.parallax-mirror{
+    z-index: 1!important;
+}
+
 body{
     font-family: 'Graphik', sans-serif;
     background-color: @white;
@@ -251,6 +256,14 @@ body{
             left: 0;
         }
     }
+    .parallaxParent {
+        overflow: hidden;
+        & > .parallaxBg  {
+            height: 200%;
+            position: relative;
+            top: -100%;
+        }
+	}
 }
 
 
@@ -547,37 +560,22 @@ body{
     }
     #story{
         padding: 100px 0;
-        background-color: @black;
         color: @white;
         position: relative;
         z-index: 1;
         & > .wrap{
             z-index: 2;
-            p{
+            .quote{
                 font-size: 23px;
                 margin-bottom: 50px;
             }
         }
-        .bottom{
-            background-color: @black;
-            text-align: center;
-            z-index: 2;
-            padding: 50px 0;
-            a{
-                color: @white;
-            }
-            //margin: 0;
-            .launch{
-                display: inline-block;
-                border-radius: 50%;
-                padding: 10px;
-                background-color: @green;
-                margin-bottom: 20px;
-                cursor: pointer;
-                transition: .2s;
-                &:hover{
-                    transform: scale(1.1);
-                }
+        .launch{
+            display: inline-block;
+            cursor: pointer;
+            transition: .2s;
+            &:hover{
+                transform: scale(1.1);
             }
         }
         .storyPlayer{
@@ -591,14 +589,14 @@ body{
             height: 100%;
             overflow: auto;
             .player-wrap{
-                background: @white;
-                margin: 0px auto;
-                padding: 100px 50px;
-                color: @black;
                 position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 .close{
+                    color: @white;
                     position: absolute;
-                    top: 50px;
+                    top: -50px;
                     right: 0px;
                     margin: 0;
                     cursor: pointer;

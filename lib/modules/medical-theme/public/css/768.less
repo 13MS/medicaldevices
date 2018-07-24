@@ -153,24 +153,22 @@ body{
         height: 100vh;
         & > .wrap{
             .centered();
-            p{
+            .quote{
                 font-size: 30px;
             }
-        }
-        .bottom{
-            position: absolute;
-            width: 100%;
-            bottom: 0;
         }
         .storyPlayer{
             .player-wrap{
                 max-width: 900px;
-                margin: 100px auto;
-                .close{
-                    top: 100px;
-                    right: 50px;
-                }
             }
+        }
+    }
+    #update{
+        padding: 200px 0;
+        color: @white;
+        .wrap{
+            position: relative;
+            z-index: 2;
         }
     }
     #act{

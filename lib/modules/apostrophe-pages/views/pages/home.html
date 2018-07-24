@@ -125,38 +125,28 @@
   </section>
 
 
-  <section id="story">
+  <section id="story"  data-parallax="scroll" data-image-src="/images/story-bg.jpg" data-bleed="10">
     <div class="wrap">
       <div class="quote">{{ apos.singleton(data.page, 'story_quote', 'apostrophe-rich-text', {
           toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
         }) }}</div>
+        <div class="byline">
+      {{ apos.singleton(data.page, 'story_byline', 'apostrophe-rich-text', {
+          toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
+        }) }}
     </div>
-    <div class="bottom">
-    <div class="wrap">
-      {#<a class="launch"><i class="fa fa-align-left"></i></a>#}
-      <p>Angie Firmalino founded Essure Problems, a 36,000+ strong patient advocacy group, that now brings together patients and activists together fighting for medical device safety. Through her personal story and the forming of the E-Sisters, Angie has propelled forward the fight to remove Essure off the American market, with Bayer finally announcing on July 20, 2018 its plan to pull the device from American markets.</p>
-      <p>You can watch Angie's story in The Bleeding Edge documentary, on Netflix.</p>
-      <a class="button" target="_blank" href="">Watch Now</a>
-      </div>
+    <a class="launch"><img src="/images/play-button.svg" /></a>
     </div>
-    {#
+    
+    
     <div class="storyPlayer">
       <div class="player-wrap">
         <a class="button close">Close</a>
-          <h2>Angie Firmalino</h2>
-          {{ apos.area(data.page, 'story', { 
-            widgets: {
-              'apostrophe-rich-text': {
-                  toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ],
-                  styles: [{ name: 'Heading', element: 'h3' },{ name: 'Paragraph', element: 'p' }]
-              },
-              'apostrophe-images': {size: 'full'},
-              'youtube-player': {}
-            }
-          }) }}
+          {{ apos.singleton(data.page, 'story_video', 'youtube-player', {}) }}
       </div>
     </div>
-    #}
+
+    {#
     <div class="backgroundVideo">
       <video autoplay muted loop poster="">
         <source temp-src="videos/test.mp4" type="video/mp4" />
@@ -164,6 +154,16 @@
         <source temp-src="videos/test.webm" type="video/webm" />
       </video>
     </div> 
+    #}
+  </section>
+  <section id="update" data-parallax="scroll" data-image-src="/images/update-bg.jpg">
+    <div class="wrap col-group">
+      <div class="col-offset-6 col-6" >
+        {{ apos.singleton(data.page, 'update', 'apostrophe-rich-text', {
+          toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
+        })}}
+      </div>
+    </div>
   </section>
   <section id="questions">
     <div class="wrap col-group">
