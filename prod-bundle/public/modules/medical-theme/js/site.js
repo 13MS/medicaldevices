@@ -71,12 +71,16 @@ $(function() {
 
     var homeResize = function(){
       windowHeight = $(window).height();
+      widthHeigth = $(window).width() / 8;
       documentHeight = $(document).height() - windowHeight;
       tenAppears = oneinten.offset().top - windowHeight;
       tenStops = oneinten.offset().top;
       padding = $(window).innerHeight() / 2;
       oneinten.css('padding', padding.toString() + 'px 0')
       progressBar.css('top', $('#mainheader').innerHeight());
+
+      //Resize the month graph
+      $('.graph polyline').attr('points', '0 180, ' + widthHeigth + ' 100, ' + 3 * widthHeigth + ' 150, ' + 5 * widthHeigth + ' 70, ' + 7 * widthHeigth + ' 50, ' + 8 * widthHeigth + ' 5')
 
       //Check that the animation is at the right spoty
       scrollAnimation();
