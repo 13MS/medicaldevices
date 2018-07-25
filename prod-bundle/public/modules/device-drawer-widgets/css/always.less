@@ -1,0 +1,28 @@
+.deviceDrawer{
+    margin-bottom: 20px;
+    background-color: @lightgrey;
+    &.active{
+        .content{
+            display: block;
+        }
+        .title{
+                background-color: @green;
+        }
+    }
+    .title{
+        padding: 20px;
+        cursor: pointer;
+        i{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+    }
+    .content{
+        padding: 20px;
+        display: none;
+        .text{
+            padding: 20px 0!important;
+        }
+    }
+}
