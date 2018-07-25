@@ -42,6 +42,13 @@
 
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
+  <!-- Facebook Open Graph-->
+  <meta property="og:title" content="{{data.page.seoTitle}}"/>
+  <meta property="og:description" content="{{data.page.seoDescription}}"/>
+  <meta property="og:url" content="https://medical-device.herokuapp.com{{data.page._url}}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="{{apos.attachments.url(data.page.facebookImage)}}"/>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74357159-13"></script>
   <script>
