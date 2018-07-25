@@ -5,45 +5,6 @@
 
 {% extends "layout.html" %}
 
-{% block beforeMain %}
-  <header class="dark" id="mainheader">
-    <div class="logo"><a href="{{ data.home._url }}"><img src="images/logo-icon.svg" />{{ data.home.title }}</a></div>
-    <div class="rightSide">
-      <a class="button shareButton">Share</a>
-      <div id="share">
-          <a id="facebookShare" href="#">Facebook</a>
-          <a href="https://twitter.com/share?text=Learn%20more%20about%20medical%20devices%20problems" target="_blank">Twitter</a>
-          <a href="mailto:?subject=Medical%20Devices%20Problems&body=Learn about medical devices problems at http://medicaldevicesproblems.com">Email</a>
-          <script>
-          document.getElementById('facebookShare').onclick = function(e) {
-            e.preventDefault();
-            FB.ui({
-              method: 'share',
-              display: 'popup',
-              href: 'https://developers.facebook.com/docs/',
-            }, function(response){});
-          }
-          </script>
-      </div>
-      <div class="hamburger"><i class="fa fa-bars"></i></div>
-    </div>
-  </header>
-
-   <div id="sideMenu">
-    <header>
-      <a class="button">Close</a>
-    </header>
-    <nav>
-    {{ apos.area(data.global, 'side_menu', {
-        widgets: {
-          'menu-item': {}
-        }
-    })}}
-    <nav>
-  </div>
-  </div>
-{% endblock %}
-
 
 
 {% block main %}

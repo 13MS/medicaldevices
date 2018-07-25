@@ -56,7 +56,7 @@
 
 
 {% block beforeMain %}
-  <header id="mainheader">
+  <header id="mainheader" {% if data.page._url == '/' %}class="dark"{% endif %}>
     <div class="logo"><a href="{{ data.home._url }}"><img src="images/logo-icon.svg" />{{ data.home.title }}</a></div>
     <div class="rightSide">
       <a class="button shareButton">Share</a>
