@@ -64,7 +64,7 @@
 
 {% block beforeMain %}
   <header id="mainheader" {% if data.page._url == '/' %}class="dark"{% endif %}>
-    <div class="logo"><a href="{{ data.home._url }}"><img src="images/logo-icon.svg" />{{ data.home.title }}</a></div>
+    <div class="logo"><a href="{{ data.home._url }}">{{ data.home.title }}</a></div>
     <div class="rightSide">
       <a class="button shareButton">Share</a>
       <div id="share">
@@ -77,7 +77,7 @@
             FB.ui({
               method: 'share',
               display: 'popup',
-              href: 'https://medical-device.herokuapp.com/',
+              href: 'http://www.medicaldeviceproblems.com',
             }, function(response){});
           }
           </script>
