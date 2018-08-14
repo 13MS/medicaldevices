@@ -45,10 +45,11 @@
 
   <!-- Facebook Open Graph-->
   <meta property="og:title" content="{% if data.page.seoTitle %}{{data.page.seoTitle}}{% else %}{{data.page.title}}{% endif %}"/>
-  <meta property="og:description" content="{{data.page.seoDescription}}"/>
+  <meta property="og:description" content="{% if data.page.seoDescription %}{{data.page.seoDescription}}{% else %}Over the past decade, nearly 70 million Americans have been implanted with medical devices.{% endif %}"/>
   <meta property="og:url" content="http://www.medicaldeviceproblems.com{{data.page._url}}"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:image" content="{{apos.attachments.url(data.page.facebookImage)}}"/>
+  <meta property="og:image" content="{% if data.page.facebookImage %}{{apos.attachments.url(data.page.facebookImage)}}{% else %}https://medical-devices.s3.amazonaws.com/attachments/cjk3nb00g001a0ks9zmm556c7-facebook-home.one-half.jpg{% endif %}"/>
+  
 
     <!-- Twitter Cards-->
   <meta name="twitter:card" content="summary_large_image"></meta>
