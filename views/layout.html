@@ -44,7 +44,7 @@
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
   <!-- Facebook Open Graph-->
-  <meta property="og:title" content="{{data.page.seoTitle}}"/>
+  <meta property="og:title" content="{% if data.page.seoTitle %}{{data.page.seoTitle}}{% else %}{{data.page.title}}{% endif %}"/>
   <meta property="og:description" content="{{data.page.seoDescription}}"/>
   <meta property="og:url" content="http://www.medicaldeviceproblems.com{{data.page._url}}"/>
   <meta property="og:type" content="website"/>
