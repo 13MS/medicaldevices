@@ -35,11 +35,25 @@ body{
     }
 
     header#mainheader{
+        .logo{
+            a{
+                &:hover{
+                    color: @green;
+                }
+            }
+        }
         .rightSide{
-            a.button{
+            a{
                 display: inline-block;
                 margin-bottom: 0;
                 font-weight: 600;
+                &:not(.button){
+                    margin-right: 10px;
+                    &:hover{
+                        color: @green;
+                    }
+    
+                }
             }
         }
     }
