@@ -16,7 +16,7 @@
     <div class="wrap">
         <h1>{{apos.singleton(data.page, 'longerTitle', 'apostrophe-rich-text', {})}}</h1>
         {{apos.singleton(data.page, 'intro', 'apostrophe-rich-text', {})}}
-        {{apos.singleton(data.page, 'video', 'youtube-player', {})}}
+        <a class="button" href="#video">Harmed by a Medical Device?</a>
     </div>
   </section>
 
@@ -38,6 +38,12 @@
                 })
             }}
         </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="wrap">
+        {{apos.singleton(data.page, 'video', 'youtube-player', {})}}
     </div>
   </section>
 
