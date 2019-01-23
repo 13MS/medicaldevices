@@ -2,7 +2,7 @@
 
 Created using the Apostrophe Boilerplate v2.
 
-Designed and created by 13milliseconds for ASHES nonprofit, in collaboragtion with Peace is Loud. The website was created after the release of The Bleeding Edge on Netflix and the following campaign.
+Designed and created by [13milliseconds](https://13milliseconds.com) for [ASHES nonprofit](https://www.ashesnonprofit.com), in collaboration with [Peace is Loud](https://peaceisloud.org/). The website was created after the release of [The Bleeding Edge](http://bleedingedgedoc.com) on Netflix and the following campaign.
 
 ---------------
 
