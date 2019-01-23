@@ -15,3 +15,5 @@ node_modules
 /public/css/master-*.less
 .jshintrc
 /public/js/_site-compiled.js
+#Add the local variables
+.env

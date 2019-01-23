@@ -1,4 +1,5 @@
 var path = require('path');
+require('dotenv').config();
 
 var apos = require('apostrophe')({
   shortName: 'medical-devices',
@@ -101,8 +102,8 @@ var apos = require('apostrophe')({
     'apostrophe-attachments': {
       uploadfs: {
         backend: 's3',
-        secret: 'EK2V9G2y+6bXx6y7No2tpVJ57l7dFnLRN38SPl7b',
-        key: 'AKIAJOZY4ZMIJUUA2Z2A',
+        secret: process.env.S3SECRET,
+        key: process.env.S3KEY,
         bucket: 'medical-devices',
         region: 'us-east-2',
         https: true
